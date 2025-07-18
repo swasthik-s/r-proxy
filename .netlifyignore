@@ -1,0 +1,8 @@
+# Exclude node_modules and problematic files
+node_modules/
+plugins/node_modules/
+**/*#*/**
+**/*?*/**
+*.log*
+.cache
+.env

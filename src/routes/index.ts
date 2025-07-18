@@ -13,7 +13,11 @@ import {
 export default defineEventHandler(async (event) => {
   // Handle preflight CORS requests
   if (isPreflightRequest(event)) {
-    handleCors(event, {});
+    setHeaders(event, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': '*',
+    });
     // Ensure the response ends here for preflight
     event.node.res.statusCode = 204;
     event.node.res.end();

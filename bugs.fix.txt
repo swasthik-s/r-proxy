@@ -7,10 +7,16 @@ Added to getAfterResponseHeaders() in src/utils/headers.ts:
   'Access-Control-Allow-Headers': '*'
 }
 
+Updated preflight handling in src/routes/index.ts to explicitly set CORS headers:
+- Replaced handleCors(event, {}) with setHeaders() call
+- Now explicitly sets the required CORS headers for OPTIONS requests
+
 The CORS headers are now properly set for:
-- Main proxy endpoint (/) via getAfterResponseHeaders()
+- Main proxy endpoint (/) via getAfterResponseHeaders() AND preflight handling
 - M3U8 proxy (/m3u8-proxy) via setResponseHeaders()
 - TS proxy (/ts-proxy) via setResponseHeaders()
 - All test endpoints already had complete CORS headers
 
 Build tested successfully for Netlify preset.
+
+NOTE: You need to redeploy to Netlify for the changes to take effect.

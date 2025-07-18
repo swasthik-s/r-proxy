@@ -6,7 +6,7 @@ Added to getAfterResponseHeaders() in src/utils/headers.ts:
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 
   'Access-Control-Allow-Headers': '*'
 }
-
+ss
 Updated preflight handling in src/routes/index.ts to explicitly set CORS headers:
 - Replaced handleCors(event, {}) with setHeaders() call
 - Now explicitly sets the required CORS headers for OPTIONS requests

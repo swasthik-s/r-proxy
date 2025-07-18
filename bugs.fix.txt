@@ -1,0 +1,1 @@
+Netlify proxy is missing the required CORS headers.

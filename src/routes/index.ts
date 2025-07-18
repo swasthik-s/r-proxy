@@ -35,9 +35,8 @@ export default defineEventHandler(async (event) => {
       event,
       status: 200,
       data: {
-        message: `Proxy is working as expected (v${
-          useRuntimeConfig(event).version
-        })`,
+        message: `Proxy is working as expected (v${useRuntimeConfig(event).version
+          })`,
       },
     });
   }
